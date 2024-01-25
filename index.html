@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>OOP In JS</h1>
+
+    <script>
+        // var cars = {
+            
+        //     name : "Carolla",
+        //     brand : "Toyota",
+        //     price : "$25000"
+
+        // }
+
+            class Vehicle{
+                constructor(name,brand,price,engine){
+                    this.name = name;
+                    this.brand = brand;
+                    this.price = price;
+                    this.engine = engine;
+                }
+                
+                start(){
+                    console.log(`${this.name} & ${this.brand} has a price of ${this.price} and engine ${this.engine}`);
+                    
+                }
+
+            }
+            
+            let carolla = new Vehicle ("Yaris","Totoya","450000", "1500cc")
+            let landcruiser = new Vehicle ("Landcruiser","Totoya","1450000", "4500cc")
+            let Mehran = new Vehicle ("Mehran","Suzuki","50000", "800cc")
+            let Honda = new Vehicle ("Civic","Honda","250000", "1800cc")
+
+            carolla.start()
+            Mehran.start()
+
+            class Motorbikes extends Vehicle {
+                constructor(name,brand,price,engine,SeatingCapacity,FuelTank){
+                    super(name,brand,price,engine),
+                    this.SeatingCapacity = SeatingCapacity;
+                    this.FuelTank = FuelTank;
+            }
+
+            kick(){
+                console.log(`${this.name} ${this.brand} has a price of ${this.price} and a Engine capacity of ${this.engine} and seating capacitty of ${this.SeatingCapacity} and a fuelTank of ${this.FuelTank}`);
+            }
+        }
+
+        let Yamaha = new Motorbikes("Yamaha" , "R2" , "250000" , "1500cc" , 2 , 1500 );
+        let Phatphati = new Motorbikes("Suzuki" , "Vespa" , "25000" , 2 , 1500 );
+
+        Yamaha.kick()
+    </script>
+
+</body>
+</html>
